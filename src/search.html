@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <title>搜索</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+<div class="l-content search-box751">
+    <div class="head751">
+        <div class="input-box751">
+            <span class="icon icon-search"></span>
+            <input class="J_searchInput" type="search" placeholder="搜索您喜欢的商品">
+        </div>
+        <div class="handle-box751" id="J_goBack-1">取消</div>
+    </div>
+    <ul class="suggest751"></ul>
+    <div class="m-tab" id="J_searchTab">
+        <div class="tab-buttons clearfix">
+            <div id="#tab1" class="tab-button active">热搜</div>
+            <div id="#tab2" class="tab-button">历史搜索 </div>
+        </div>
+        <div class="tab-contents">
+            <div id="tab1" class="tab-content">
+                <ul class="search-lists751">
+                    <li><a href="">蓝莓</a></li>
+                    <li><a href="">草莓</a></li>
+                    <li><a href="">番茄</a></li>
+                    <li><a href="">小龙虾</a></li>
+                    <li><a href="">满汉全席</a></li>
+                    <li><a href="">小果果</a></li>
+                    <li><a href="">麻辣香锅</a></li>
+                    <li><a href="">番茄烧土豆</a></li>
+                    <li><a href="">小龙虾啊</a></li>
+                    <li><a href="">满汉全席</a></li>
+                </ul>
+            </div>
+            <div id="tab2" class="tab-content">
+                <ul class="search-lists751" id="J_searchHisShowBox"></ul>
+                <div class="search-btn-box751">
+                    <button class="btn btn-green btn-radius" id="J_clearSearchHistory">清除历史搜索</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="../dist/js/common.js?v=1.0.1"></script>
+<script src="../dist/js/search.js?v=1.0.1"></script>
+<script>
+    $(function(){
+        // tab切换
+        $('#J_searchTab').toggleTab();
+
+        // 取消按钮
+        $('#J_goBack-1').on('tap', function () {
+            history.go(-1);
+        });
+    });
+</script>
+</body>
+</html>

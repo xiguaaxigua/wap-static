@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <title>发票信息</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+<header class="l-head">
+    <button type="button" class="back" onclick="history.go(-1)"><span class="icon icon-back"></span></button>
+    <h2 class="title">发票信息</h2>
+    <button type="button" class="handle">保存</button>
+</header>
+<div class="l-content invoice-info-box751">
+    <div class="invoice-title751">
+        发票信息
+        <p class="switch switch-open"><span class="dot"></span></p>
+    </div>
+    <p class="invoice-tips751">
+        请注意，我们无法为使用斯玛特卡，杉德卡，东方文化
+        卡支付的用户开具发票，如需发票，请联系此卡的提供
+        商。
+    </p>
+    <div class="invoice-header751">
+        <p class="invoice-header-title751">
+            发票抬头
+        </p>
+        <p class="invoice-header-radio751">
+            <input type="radio" class="radio" name="invoiceHeader" id="personal" checked>
+            <label for="personal">个人</label>
+            <input type="radio" class="radio" name="invoiceHeader" id="company">
+            <label for="company">公司</label>
+        </p>
+        <p class="invoice-header-company751">
+            *公司名称
+            <span>（需填写）</span>
+            <span class="icon icon-select-down"></span>
+        </p>
+        <ul class="invoice-header-company-lists751">
+            <li>公司名称公司名称公司名称公司名称a</li>
+            <li>公司名称公司名称公司名称公司名称b</li>
+            <li>公司名称公司名称公司名称公司名称c</li>
+            <li>公司名称公司名称公司名称公司名称d</li>
+            <li>公司名称公司名称公司名称公司名称e</li>
+        </ul>
+    </div>
+    <div class="delivery-address751">
+        <p class="delivery-address-title751">配送至</p>
+        <p class="deafult-address751">
+            <input id="defaultAddress" type="radio" name="deliveryAddress" class="radio" checked>
+            <label for="defaultAddress">和配送地址相同</label>
+        </p>
+        <p class="new-address751">
+            <input id="newAddress" type="radio" name="deliveryAddress" class="radio">
+            <label for="newAddress">新地址<span>（需填写）</span></label>
+        </p>
+        <p class="new-address-form751">
+            <input type="text" placeholder="收货人姓名">
+            <input type="tel" placeholder="收货人手机">
+            <input type="text" placeholder="收货人地址">
+        </p>
+    </div>
+</div>
+<script src="../dist/js/common.js?v=1.0.1"></script>
+<script src="../dist/js/checkout.js?v=1.0.1"></script>
+</body>
+</html>

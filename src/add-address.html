@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <title>添加地址</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+<header class="l-head">
+    <button type="button" class="back" onclick="history.go(-1)"><span class="icon icon-back"></span></button>
+    <h2 class="title">添加地址</h2>
+</header>
+<div class="l-content add-address-box751">
+    <form class="m-form">
+        <div class="m-form-item">
+            <input type="text" class="item-input J_Verify929" data-verify="{required:true}" placeholder="收件人">
+        </div>
+        <div class="m-form-item">
+            <input type="tel" class="item-input J_Verify929" data-verify="{required:true, type:tel, msg:手机格式不正确}" placeholder="手机号码">
+        </div>
+        <div class="m-form-item">
+            <span class="icon-sm icon-down item-icon"></span>
+            <select name="" class="item-input J_Verify929" data-verify="{required:true}" id="J_Province">
+                <option value="0">选择省</option>
+                <option value="1">上海</option>
+                <option value="2">北京</option>
+                <option value="3">重庆</option>
+                <option value="4">深圳</option>
+            </select>
+        </div>
+        <div class="m-form-item">
+            <span class="icon-sm icon-down item-icon"></span>
+            <select name="" class="item-input J_Verify929" data-verify="{required:true}" id="J_City">
+                <option value="0">选择市</option>
+                <option value="1">上海</option>
+                <option value="2">北京</option>
+                <option value="3">重庆</option>
+                <option value="4">深圳</option>
+            </select>
+        </div>
+        <div class="m-form-item">
+            <span class="icon-sm icon-down item-icon"></span>
+            <select name="" class="item-input J_Verify929" data-verify="{required:true}" id="J_Area">
+                <option value="0">选择区</option>
+                <option value="1">上海</option>
+                <option value="2">北京</option>
+                <option value="3">重庆</option>
+                <option value="4">深圳</option>
+            </select>
+        </div>
+        <div class="m-form-item">
+            <textarea name="" id="" placeholder="详细地址" class="item-input J_Verify929" data-verify="{required:true}"></textarea>
+        </div>
+        <div class="m-form-item">
+            <p class="switch switch-open"><span class="dot"></span></p>
+            <input type="text" class="item-input" placeholder="设置默认" disabled>
+        </div>
+        <div class="m-form-item">
+            <span class="icon-sm icon-down item-icon"></span>
+            <input type="text" class="item-input" placeholder="地址标签" disabled>
+        </div>
+        <div class="btn-wrap751">
+            <button type="button" disabled class="btn-sm J_SubmitBtn">保存</button>
+        </div>
+    </form>
+</div>
+<script src="../dist/js/common.js?v=1.0.1"></script>
+<script src="../dist/js/address.js?v=1.0.1"></script>
+<script>
+    $(".switch").toggleSwitch();
+</script>
+</body>
+</html>

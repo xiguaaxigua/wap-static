@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <title>食记</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+<header class="l-head">
+    <button type="button" class="back" onclick="history.go(-1)"><span class="icon icon-back"></span></button>
+    <h2 class="title">食记</h2>
+</header>
+<div class="l-content foods-details929">
+    <h1>云南鲜鸡菇</h1>
+    <p>朽木之下，掩藏着一个史前世界。工蚁吞下树叶和杂草排出体外形成半消化的草料。</p>
+    <p>鸡枞是白蚁培植的极品美味孢子逐渐形成直径只有几微米的菌丝，合适的温度和湿度，让它生长出粗壮的子实体。</p>
+    <p>&nbsp;</p>
+    <p style="margin-left:0;"><img alt="" src="http://fieldsimage.oss-cn-hangzhou.aliyuncs.com/data/000007/20110825.jpg" ></p>
+    <p style="text-align: center;">&nbsp;</p>
+    <p style="text-align: center;">&nbsp;</p>
+    <h2>采收</h2>
+    <p>朽木之下，掩藏着一个史前世界。工蚁吞下树叶和杂草排出体外形成半消化的草料。</p>
+    <p>鸡枞是白蚁培植的极品美味孢子逐渐形成直径只有几微米的菌丝，合适的温度和湿度，让它生长出粗壮的子实体。</p>
+    <p>&nbsp;</p>
+    <p style="margin-left:0;"><img alt="" src="http://fieldsimage.oss-cn-hangzhou.aliyuncs.com/data/000007/20110825.jpg" ></p>
+    <p style="text-align: center;">&nbsp;</p>
+    <p style="text-align: center;">&nbsp;</p>
+</div>
+
+<script src="../dist/js/common.js?v=1.0.1"></script>
+<script src="../dist/js/product.js?v=1.0.1"></script>
+<script type="text/javascript">
+    $(function(){
+        //tab切换
+        $("#J_tab").toggleTab();
+        //下拉加载数据
+        !function(){
+            //加载数据
+            var loadData = function(catId){
+                var category_id = catId,
+                    $tabContent = $('#J_TabContent'),
+                    page = $tabContent.attr('data-page');
+                $.ajax({
+                    url:'',
+                    type: 'post',
+                    success: function(data){
+                        data = {};
+
+                    }
+                })
+            };
+            $('#J_TabCat').on('tap', function(event){
+                var target = event.target || event.srcElement,
+                    catId = target.getAttribute('data-categoryid');
+                if(catId){
+                    console.log(1122);
+                    loadData(catId);
+                }
+            });
+        }();
+    });
+</script>
+</body>
+</html>

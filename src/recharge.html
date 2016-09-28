@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <title>账户充值</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+<header class="l-head">
+    <button type="button" class="back" onclick="history.go(-1)"><span class="icon icon-back"></span></button>
+    <h2 class="title">账户充值</h2>
+</header>
+<div class="l-content recharge-box751">
+    <p class="recharge-item751">
+        账户余额
+        <span>￥4510</span>
+    </p>
+    <div class="recharge-item751" id="J_rechargeValue">
+        <p class="recharge-title751">充值余额</p>
+        <div class="balance751" data-value="10">
+            <p>10</p>
+            <p>售价：10</p>
+        </div>
+        <div class="balance751" data-value="20">
+            <p>20</p>
+            <p>售价：20</p>
+        </div>
+        <div class="balance751" data-value="30">
+            <p>30</p>
+            <p>售价：30</p>
+        </div>
+        <div class="balance751" data-value="40">
+            <p>40</p>
+            <p>售价：40</p>
+        </div>
+        <div class="balance751" data-value="50">
+            <p>50</p>
+            <p>售价：50</p>
+        </div>
+        <div class="balance751" data-value="60">
+            <p>60</p>
+            <p>售价：60</p>
+        </div>
+    </div>
+    <div class="recharge-item751" id="J_rechargeMethod">
+        <p class="recharge-title751">充值方式</p>
+        <label class="recharge-method751" for="alipay">
+            支付宝
+            <input id="alipay" name="rechargeMethod" type="radio" class="radio">
+        </label>
+        <label class="recharge-method751" for="wechat">
+            微信
+            <input id="wechat" name="rechargeMethod" type="radio" class="radio">
+        </label>
+        <label class="recharge-method751" for="paypal">
+            PayPal
+            <input id="paypal" name="rechargeMethod" type="radio" class="radio">
+        </label>
+        <label class="recharge-method751" for="credit">
+            信用卡
+            <input id="credit" name="rechargeMethod" type="radio" class="radio">
+        </label>
+    </div>
+    <div class="btn-wrap751">
+        <button id="J_submitBtn" type="button" class="btn-sm" disabled>立即充值</button>
+    </div>
+</div>
+<script src="../dist/js/common.js?v=1.0.1"></script>
+<script src="../dist/js/user.js?v=1.0.1"></script>
+<script>
+    $(function () {
+        var vBtn = $('#J_rechargeValue').find('.balance751'),
+            mBtn = $('#J_rechargeMethod').find('.radio'),
+            submitBtn = $('#J_submitBtn');
+        // 选择充值金额
+        vBtn.on('tap', function () {
+            vBtn.removeClass('active').parent().data('value', $(this).attr('data-value'));
+            $(this).addClass('active');
+            checkSubmitBtn();
+        });
+        // 选择充值方式
+        mBtn.change(function () {
+            mBtn.parent().data('value', $(this).attr('id'));
+            checkSubmitBtn();
+        });
+        // 按钮移除disabled
+        function checkSubmitBtn(){
+            if(vBtn.parent().data('value') && mBtn.parent().data('value')){
+                submitBtn.removeAttr('disabled');
+            }
+        }
+        // 处理数据
+        submitBtn.on('tap', function(){
+            if(!vBtn.parent().data('value') && !mBtn.parent().data('value')) return false;
+            console.log('充值金额:' + vBtn.parent().data('value'));
+            console.log('充值方式:' + mBtn.parent().data('value'));
+        });
+    });
+</script>
+</body>
+</html>

@@ -1,0 +1,100 @@
+@charset "utf-8";
+/*================================================================
+                 SCSS CSS Layout 用于全局布局
+ ================================================================*/
+.l-head, .l-nav, .l-content{
+    @include limit-width();
+}
+.l-head{
+    position: fixed;
+    z-index: 5;
+    top: 0;
+    right: 0;
+    left: 0;
+
+    background-color: #fff;
+    border-bottom: 1px solid $border-light-grey;
+    .back, .handle{
+        position: absolute;
+
+        width: 65px;
+        height: 46px;
+        top: 0;
+        font-size: 12px;
+        color: $font-grey;
+    }
+    .back{
+        left: 0;
+        text-align: left;
+        padding: 6px 10px;
+    }
+    .title{
+        margin: 0;
+        font-size: $font-lg;
+        line-height: 46px;
+
+        box-sizing: border-box;
+        width: 100%;
+        padding: 0 65px;
+
+        text-align: center;
+
+        color: $font-grey;
+    }
+    .handle{
+        right: 0;
+        padding: 13px 10px 13px 0;
+        line-height: 20px;
+        text-align: right;
+        span{
+            vertical-align: inherit;
+        }
+    }
+    .search-link751{
+        margin-right: 8px;
+    }
+}
+
+.l-nav{
+    position: fixed;
+    z-index: 5;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    padding: 5px 0;
+    background-color: #fff;
+    width: 100%;
+    font-size: 0;
+    border-top: 1px solid $border-light-grey;
+    .nav {
+        float: left;
+        font-size: 12px;
+        width: 20%;
+
+        text-align: center;
+        text-decoration: none;
+
+        color: $font-dark-grey;
+        p{
+            line-height: 1;
+            padding-top: 5px;
+        }
+    }
+    .active {
+        color: $green;
+    }
+}
+
+.l-content{
+    min-height: 100%;
+    position: relative;
+    background-color: #fff;
+}
+
+.l-head~.l-content{
+    padding-top: 46px;
+}
+
+.l-nav~.l-content{
+    padding-bottom: 50px;
+}

@@ -1,0 +1,390 @@
+/*
+Icon classes can be used entirely standalone. They are named after their original file names.
+
+Example usage in HTML:
+
+`display: block` sprite:
+<div class="icon-home"></div>
+
+To change `display` (e.g. `display: inline-block;`), we suggest using a common CSS class:
+
+// CSS
+.icon {
+  display: inline-block;
+}
+
+// HTML
+<i class="icon icon-home"></i>
+*/
+.icon-back {
+  background-image: url(../../../../../icons.png);
+  background-position: -105px 0px;
+  width: 20px;
+  height: 20px;
+}
+.icon-cart-active {
+  background-image: url(../../../../../icons.png);
+  background-position: -30px -161px;
+  width: 20px;
+  height: 20px;
+}
+.icon-cart {
+  background-image: url(../../../../../icons.png);
+  background-position: -150px -191px;
+  width: 20px;
+  height: 20px;
+}
+.icon-cart2 {
+  background-image: url(../../../../../icons.png);
+  background-position: -40px 0px;
+  width: 24px;
+  height: 24px;
+}
+.icon-cate1 {
+  background-image: url(../../../../../icons.png);
+  background-position: 0px -101px;
+  width: 20px;
+  height: 20px;
+}
+.icon-cate2 {
+  background-image: url(../../../../../icons.png);
+  background-position: -60px -131px;
+  width: 20px;
+  height: 20px;
+}
+.icon-classify-active {
+  background-image: url(../../../../../icons.png);
+  background-position: -195px -60px;
+  width: 20px;
+  height: 20px;
+}
+.icon-classify {
+  background-image: url(../../../../../icons.png);
+  background-position: -195px -120px;
+  width: 20px;
+  height: 20px;
+}
+.icon-delete {
+  background-image: url(../../../../../icons.png);
+  background-position: -74px 0px;
+  width: 21px;
+  height: 21px;
+}
+.icon-delete2 {
+  background-image: url(../../../../../icons.png);
+  background-position: 0px 0px;
+  width: 30px;
+  height: 30px;
+}
+.icon-down {
+  background-image: url(../../../../../icons.png);
+  background-position: -256px -22px;
+  width: 12px;
+  height: 12px;
+}
+.icon-earth {
+  background-image: url(../../../../../icons.png);
+  background-position: -105px -60px;
+  width: 20px;
+  height: 20px;
+}
+.icon-edit {
+  background-image: url(../../../../../icons.png);
+  background-position: -74px -31px;
+  width: 21px;
+  height: 21px;
+}
+.icon-email {
+  background-image: url(../../../../../icons.png);
+  background-position: -30px -101px;
+  width: 20px;
+  height: 20px;
+}
+.icon-eye-close {
+  background-image: url(../../../../../icons.png);
+  background-position: -60px -101px;
+  width: 20px;
+  height: 20px;
+}
+.icon-eye-open {
+  background-image: url(../../../../../icons.png);
+  background-position: -90px -101px;
+  width: 20px;
+  height: 20px;
+}
+.icon-foods-active {
+  background-image: url(../../../../../icons.png);
+  background-position: -135px 0px;
+  width: 20px;
+  height: 20px;
+}
+.icon-foods {
+  background-image: url(../../../../../icons.png);
+  background-position: -135px -30px;
+  width: 20px;
+  height: 20px;
+}
+.icon-forward {
+  background-image: url(../../../../../icons.png);
+  background-position: -256px -44px;
+  width: 10px;
+  height: 10px;
+}
+.icon-forward2 {
+  background-image: url(../../../../../icons.png);
+  background-position: -225px -89px;
+  width: 17px;
+  height: 17px;
+}
+.icon-gift {
+  background-image: url(../../../../../icons.png);
+  background-position: 0px -131px;
+  width: 20px;
+  height: 20px;
+}
+.icon-green-me {
+  background-image: url(../../../../../icons.png);
+  background-position: -30px -131px;
+  width: 20px;
+  height: 20px;
+}
+.icon-green-triangle {
+  background-image: url(../../../../../icons.png);
+  background-position: -256px -64px;
+  width: 9px;
+  height: 9px;
+}
+.icon-home-active {
+  background-image: url(../../../../../icons.png);
+  background-position: -90px -131px;
+  width: 20px;
+  height: 20px;
+}
+.icon-home {
+  background-image: url(../../../../../icons.png);
+  background-position: -120px -131px;
+  width: 20px;
+  height: 20px;
+}
+.icon-icon-en {
+  background-image: url(../../../../../icons.png);
+  background-position: -165px 0px;
+  width: 20px;
+  height: 20px;
+}
+.icon-icon-fr {
+  background-image: url(../../../../../icons.png);
+  background-position: -165px -30px;
+  width: 20px;
+  height: 20px;
+}
+.icon-icon-jp {
+  background-image: url(../../../../../icons.png);
+  background-position: -165px -60px;
+  width: 20px;
+  height: 20px;
+}
+.icon-icon-zh {
+  background-image: url(../../../../../icons.png);
+  background-position: -165px -90px;
+  width: 20px;
+  height: 20px;
+}
+.icon-key {
+  background-image: url(../../../../../icons.png);
+  background-position: -165px -120px;
+  width: 20px;
+  height: 20px;
+}
+.icon-location-green {
+  background-image: url(../../../../../icons.png);
+  background-position: 0px -161px;
+  width: 20px;
+  height: 20px;
+}
+.icon-location {
+  background-image: url(../../../../../icons.png);
+  background-position: -35px -40px;
+  width: 20px;
+  height: 20px;
+}
+.icon-lock-off {
+  background-image: url(../../../../../icons.png);
+  background-position: -60px -161px;
+  width: 20px;
+  height: 20px;
+}
+.icon-lock-on {
+  background-image: url(../../../../../icons.png);
+  background-position: -90px -161px;
+  width: 20px;
+  height: 20px;
+}
+.icon-love-green {
+  background-image: url(../../../../../icons.png);
+  background-position: -120px -161px;
+  width: 20px;
+  height: 20px;
+}
+.icon-love {
+  background-image: url(../../../../../icons.png);
+  background-position: -150px -161px;
+  width: 20px;
+  height: 20px;
+}
+.icon-me-active {
+  background-image: url(../../../../../icons.png);
+  background-position: -195px 0px;
+  width: 20px;
+  height: 20px;
+}
+.icon-me-address {
+  background-image: url(../../../../../icons.png);
+  background-position: -195px -30px;
+  width: 20px;
+  height: 20px;
+}
+.icon-me-collection {
+  background-image: url(../../../../../icons.png);
+  background-position: -62px -70px;
+  width: 20px;
+  height: 21px;
+}
+.icon-me-earphone {
+  background-image: url(../../../../../icons.png);
+  background-position: -195px -90px;
+  width: 20px;
+  height: 20px;
+}
+.icon-me-friends {
+  background-image: url(../../../../../icons.png);
+  background-position: -31px -70px;
+  width: 21px;
+  height: 21px;
+}
+.icon-me-gift {
+  background-image: url(../../../../../icons.png);
+  background-position: -195px -150px;
+  width: 20px;
+  height: 20px;
+}
+.icon-me-more {
+  background-image: url(../../../../../icons.png);
+  background-position: 0px -191px;
+  width: 20px;
+  height: 20px;
+}
+.icon-me-order {
+  background-image: url(../../../../../icons.png);
+  background-position: -30px -191px;
+  width: 20px;
+  height: 20px;
+}
+.icon-me-weixin {
+  background-image: url(../../../../../icons.png);
+  background-position: -60px -191px;
+  width: 20px;
+  height: 20px;
+}
+.icon-me {
+  background-image: url(../../../../../icons.png);
+  background-position: -90px -191px;
+  width: 20px;
+  height: 20px;
+}
+.icon-nav-1 {
+  background-image: url(../../../../../icons.png);
+  background-position: 0px -221px;
+  width: 25px;
+  height: 8px;
+}
+.icon-nav-2 {
+  background-image: url(../../../../../icons.png);
+  background-position: -225px -61px;
+  width: 17px;
+  height: 18px;
+}
+.icon-nav-3 {
+  background-image: url(../../../../../icons.png);
+  background-position: -225px -145px;
+  width: 17px;
+  height: 15px;
+}
+.icon-nav-4 {
+  background-image: url(../../../../../icons.png);
+  background-position: -180px -191px;
+  width: 23px;
+  height: 17px;
+}
+.icon-nav-5 {
+  background-image: url(../../../../../icons.png);
+  background-position: 0px -40px;
+  width: 25px;
+  height: 20px;
+}
+.icon-nav-6 {
+  background-image: url(../../../../../icons.png);
+  background-position: -225px 0px;
+  width: 21px;
+  height: 18px;
+}
+.icon-nav-7 {
+  background-image: url(../../../../../icons.png);
+  background-position: -225px -28px;
+  width: 16px;
+  height: 23px;
+}
+.icon-nav-8 {
+  background-image: url(../../../../../icons.png);
+  background-position: -225px -116px;
+  width: 15px;
+  height: 19px;
+}
+.icon-phone {
+  background-image: url(../../../../../icons.png);
+  background-position: -120px -191px;
+  width: 20px;
+  height: 20px;
+}
+.icon-save {
+  background-image: url(../../../../../icons.png);
+  background-position: 0px -70px;
+  width: 21px;
+  height: 21px;
+}
+.icon-search {
+  background-image: url(../../../../../icons.png);
+  background-position: -135px -90px;
+  width: 20px;
+  height: 20px;
+}
+.icon-select-down {
+  background-image: url(../../../../../icons.png);
+  background-position: -225px -192px;
+  width: 12px;
+  height: 12px;
+}
+.icon-select-up {
+  background-image: url(../../../../../icons.png);
+  background-position: -256px 0px;
+  width: 12px;
+  height: 12px;
+}
+.icon-setting {
+  background-image: url(../../../../../icons.png);
+  background-position: -135px -60px;
+  width: 20px;
+  height: 20px;
+}
+.icon-share {
+  background-image: url(../../../../../icons.png);
+  background-position: -105px -30px;
+  width: 20px;
+  height: 20px;
+}
+.icon-up {
+  background-image: url(../../../../../icons.png);
+  background-position: -225px -170px;
+  width: 12px;
+  height: 12px;
+}

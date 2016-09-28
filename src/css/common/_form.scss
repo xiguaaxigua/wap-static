@@ -1,0 +1,350 @@
+@charset "utf-8";
+/*================================================================
+                     SCSS CSS Form 独立表单模块
+ ================================================================*/
+/****! 按钮样式 ****/
+button,
+input[type="button"] {
+    border: none;
+    background: none;
+    @extend .ext-unsel;
+}
+
+.btn, .btn-sm{
+    display: inline-block;
+    width: 100%;
+    margin-bottom: 0;
+    padding: 0 12px;
+    @include radius(2px);
+    @include font17();
+    text-align: center;
+    line-height: 40px;
+    color: #fff;
+    background-color: $green;
+    cursor: pointer;
+    // 禁止换行
+    @include hideSingleLine();
+    // tap时颜色加深
+    &:active{
+        background-color: darken($green, 5%);
+    }
+    &:disabled {
+        //默认不可点击状态
+        color: #a4a4a4;
+        background-color: #f0f0f0;
+        pointer-events: none;
+    }
+}
+
+.btn{
+    @include font17();
+    line-height: 40px;
+}
+
+.btn-sm{
+    @include font14();
+    line-height: 30px;
+}
+
+.btn-outlined{
+    border: 1px solid $green;
+    color: $green;
+    background-color: #fff;
+    &:active{
+        background-color: lighten($green, 49%);
+    }
+}
+
+.btn-disabled:disabled{
+     //特殊不可点击状态，用于验证码
+     color: #fff;
+     background-color: $grey;
+     pointer-events: none;
+}
+
+.btn-bottom {
+    //特殊按钮，用于加入购物、结算等
+    width: 40%;
+    padding: 10px 0;
+    @include radius(0px);
+    color: #fff;
+    background-color: $green;
+    &:active {
+        background-color: darken($green, 5%);
+    }
+    &:disabled {
+        //特殊不可点击状态，用于加入购物、结算等
+        color: #fff;
+        background-color: #d4d4d4;
+        pointer-events: none;
+    }
+}
+
+
+
+/****! radio-圆形 ****/
+.checkbox-round,
+.checkbox-square {
+    position: relative;
+    top: -1px;
+    border: 1px solid $border-dark-grey;
+    margin: 0 3px -3px 3px;
+    -webkit-appearance: none;
+    background-color: #fff;
+    cursor: pointer;
+}
+.checkbox-round:checked:before,
+.checkbox-square:checked:before {
+    position: absolute;
+    top: -1px;
+    left: -1px;
+    background-color: $green;
+    content: '';
+}
+
+.checkbox-round,
+.checkbox-round:checked:before {
+    width: 16px;
+    height: 16px;
+    @include radius(50%);
+}
+
+/****! checkbox-方形 ****/
+.checkbox-square,
+.checkbox-square:checked:before {
+    width: 14px;
+    height: 14px;
+    @include radius(2px);
+}
+
+.checkbox-round:checked:after,
+.checkbox-square:checked:after{
+    position: absolute;
+    top: 1px;
+    left: 1px;
+    width: 8px;
+    height: 4px;
+    border: 2px solid #fff;
+    border-top: none;
+    border-right: none;
+    @include rotate(-45deg);
+    background: transparent;
+    content: '';
+}
+.checkbox-round:checked:after{
+    top: 2px;
+    left: 2px;
+}
+
+//单选按钮 radio
+.radio{
+    -webkit-tap-highlight-color: rgba(255,255,255,0);
+    position: relative;
+    width: 16px;
+    height: 16px;
+    border: 1px solid $border-dark-grey;
+    border-radius: 50%;
+    -webkit-appearance: none;
+    cursor: pointer;
+    margin: 0 3px -3px 3px;
+    background-color: #fff;
+}
+
+.radio:checked:before{
+    content: '';
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    width: 10px;
+    height: 10px;
+    background-color: $green;
+    border-radius: 50%;
+}
+
+//不可用状态
+.checkbox-square:disabled,
+.checkbox-round:disabled,
+.checkbox-square:disabled:checked:before ,
+.checkbox-round:disabled:checked:before,
+.radio:disabled {
+    background-color: $bg-grey;
+}
+.checkbox-square:disabled:checked:before {
+    border: 1px solid #bbb;
+    width: 12px;
+    height: 12px;
+}
+.checkbox-round:disabled:checked:before {
+    border: 1px solid #bbb;
+    width: 14px;
+    height: 14px;
+}
+.checkbox-square:disabled:checked:after ,
+.checkbox-round:disabled:checked:after {
+    border-color: #bbb;
+}
+.radio:disabled:checked:before {
+    background-color: #bbb;
+}
+
+/****! switch ****/
+.switch{
+    -webkit-tap-highlight-color: rgba(255,255,255,0);
+    position: relative;
+    display: inline-block;
+    width: 36px;
+    height: 20px;
+    -webkit-transition-timing-function: ease-in-out;
+    transition-timing-function: ease-in-out;
+    -webkit-transition-duration: .2s;
+    transition-duration: .2s;
+    -webkit-transition-property: background-color,border;
+    transition-property: background-color,border;
+    border-radius: 20px;
+    background-color: $border-dark-grey;
+    .dot{
+        position: absolute;
+        top: 1px;
+        left: 1px;
+        width: 18px;
+        height: 18px;
+        -webkit-transition: .2s ease-in-out;
+        transition: .2s ease-in-out;
+        -webkit-transition-property: -webkit-transform,width,left;
+        transition-property: transform,width,left;
+        border-radius: 16px;
+        background-color: #fff;
+    }
+    &.switch-open {
+        background-color: $green;
+        .dot {
+            left: auto;
+            right: 1px;
+        }
+    }
+}
+
+/****! input ****/
+.m-form{
+    font-size: 0;
+    .m-form-item {
+        position: relative;
+        width: 100%;
+        background-color: #fff;
+        line-height: 40px;
+        @include font14();
+        color: $font-light-grey;
+        border: 1px solid $border-light-grey;
+        border-bottom: none;
+        button{
+            @include font12();
+        }
+        &:last-of-type {
+            @include radius(0 0 $radius $radius);
+            border-bottom: 1px solid $border-light-grey;
+        }
+        &:first-child{
+            @include radius($radius $radius 0 0);
+        }
+    }
+    .item-label{
+        position: absolute;
+        top: 10px;
+        left: 10px;
+    }
+    .item-btn{
+        position: absolute;
+        right: 10px;
+        top: 5px;
+        @include font14();
+        line-height: 30px;
+        border: none;
+        width: 100px;
+        margin: 0;
+        padding: 0;
+    }
+    .item-icon{
+        position: absolute;
+        right: 10px;
+        top: 10px;
+    }
+    .item-input{
+        width: 100%;
+        height: 40px;
+        padding: 0 20px;
+        -webkit-user-select: text;
+        border: none;
+        border-radius: 3px;
+        outline: 0;
+        @include font14();
+        -webkit-appearance: none;
+        color: $font-dark-grey;
+    }
+    .item-label~.item-input{
+        padding-left: 40px;
+    }
+    .item-icon~.item-input{
+        padding-right: 40px;
+    }
+    .item-btn~.item-input,
+    .code929~.item-input{
+        padding-right: 120px;
+    }
+    select{
+        color: $font-dark-grey;
+        background-color: transparent;
+    }
+    textarea{
+        line-height: 1.2;
+        display: block;
+        height: 5em!important;
+        box-sizing: border-box;
+        padding: 10px 20px!important;
+        resize: none;
+    }
+
+}
+
+.input-lists{
+    .input-list{
+        position: relative;
+
+        margin: 5px 0;
+    }
+    .input-radio{
+        position: absolute;
+        top: 12px;
+        right: 20px;
+        @include font14();
+
+        display: inline-block;
+    }
+    .input{
+        @include font14();
+        line-height: 40px;
+
+        width: 100%;
+        height: 40px;
+        padding: 0 10px;
+
+        -webkit-user-select: text;
+
+        color: $font-dark-grey;
+        border: 1px solid $border-light-grey;
+        border-radius: $radius;
+
+        -webkit-appearance: none;
+    }
+    .input-radio ~ .input{
+        border: none;
+    }
+    .input:focus{
+        border-color: $green;
+    }
+    .icon{
+        position: absolute;
+        top: 15px;
+        right: 10px;
+    }
+}
+

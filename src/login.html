@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <title>登录</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+<header class="l-head">
+    <button type="button" class="back" onclick="history.go(-1)"><span class="icon icon-back"></span></button>
+    <h2 class="title">登录</h2>
+</header>
+<div class="l-content">
+    <div class="login-box751">
+        <form action="">
+            <div class="m-form">
+                <div class="m-form-item">
+                    <span class="icon icon-green-me item-label"></span>
+                    <input type="text" class="item-input J_Verify929" data-verify="{required:true, type:userName , msg:用户名不正确}" placeholder="请输入手机号码/邮箱">
+                </div>
+                <div class="m-form-item">
+                    <span class="icon icon-lock-off item-label"></span>
+                    <span class="icon icon-eye-close item-icon" id="J_LookOver"></span>
+                    <input type="password" class="item-input J_Verify929" id="J_PassWord" data-verify="{required:true, type:password,msg:密码不正确 }" placeholder="请输入密码">
+                </div>
+            </div>
+            <a class="forget-psw-link751" href="forget-psw.html">忘记密码？</a>
+            <button type="button" disabled class="btn btn-radius J_SubmitBtn" id="J_Login929">登录</button>
+            <a class="reg-account-link751" href="reg.html">没有账号？去注册！</a>
+        </form>
+    </div>
+</div>
+<script src="../dist/js/common.js?v=1.0.1"></script>
+<script src="../dist/js/user.js?v=1.0.1"></script>
+<script type="text/javascript">
+    $(function(){
+        //点击提交按钮
+        $('.J_SubmitBtn').bind('touchstart', function(event){
+
+            $.ajax({
+                url:'',
+                data:'',
+                type:'POST',
+                beforeSend: function(){
+                    //检查所有表单
+                    if($.verify.check()){
+                        //暂时忽略登录登录中的状态
+                        event.target.setAttribute('disabled', 'disabled');
+                        event.target.innerHTML = '登录中';
+                        return true;
+                    }else{
+                        return false;
+                    }
+                },
+                success: function(){
+                    event.target.removeAttribute('disabled');
+                    event.target.innerHTML = '登录';
+                    console.log('success');
+                }
+            });
+        });
+
+        //查看密码
+        $.verify.lookover($('#J_LookOver'), $('#J_PassWord'));
+
+    });
+
+</script>
+</body>
+</html>

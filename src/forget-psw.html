@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <title>忘记密码</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+<header class="l-head">
+    <button type="button" class="back" onclick="history.go(-1)"><span class="icon icon-back"></span></button>
+    <h2 class="title">忘记密码</h2>
+</header>
+<div class="l-content">
+    <div class="forget-psw-box751">
+        <form action="" class="m-form" id="J_ForgetPsw">
+            <div class="m-form-item">
+                <span class="icon icon-phone item-label"></span>
+                <input type="tel" class="item-input J_Verify929" id="J_UserName" data-verify="{required:true, type:userName}" placeholder="手机号码/邮箱">
+            </div>
+            <div class="m-form-item">
+                <span class="icon icon-key item-label"></span>
+                <input type="text" class="item-input J_Verify929" id="J_PicCode" data-verify="{required:true}" placeholder="图片验证码">
+                <span class="code929"><img src="img/10.png" alt=""></span>
+            </div>
+            <div class="m-form-item input-row">
+                <span class="icon icon-key item-label"></span>
+                <button type="button" disabled class="btn btn-disabled item-btn" id="J_CodeBtn">获取验证码</button>
+                <input type="text" class="item-input J_Verify929" data-verify="{required:true}" placeholder="验证码">
+            </div>
+            <div class="m-form-item input-row">
+                <span class="icon icon-lock-off item-label"></span>
+                <span class="icon icon-eye-close item-icon"></span>
+                <input type="password" class="item-input J_Verify929" data-verify="{required:true, type:password}" placeholder="输入新密码">
+            </div>
+            <p><button type="button" disabled class="btn btn-radius J_SubmitBtn">确认</button></p>
+        </form>
+    </div>
+</div>
+<script src="../dist/js/common.js?v=1.0.1"></script>
+<script src="../dist/js/user.js?v=1.0.1"></script>
+<script>
+    $(function(){
+        // 验证码是否可点击
+        var $phone = $('#J_Phone'), // 手机号
+            $code = $('#J_PhoneCode'), // 图形验证码
+            $btn = $('#J_CodeBtn'); // 获取短信验证码
+
+        $('#J_Register').bind('keyup change', function(event){
+            if(/^[0-9]{11}$/.test($phone.val()) && $code.val()!='' && !$btn.data('test')){
+                $btn.removeClass('btn-disabled').removeAttr('disabled');
+            }else{
+                $btn.addClass('btn-disabled').attr('disabled','disabled');
+            }
+        });
+
+        // 获取短信验证码
+        $btn.on('tap', function(){
+            var getPicCodeData = {
+                useType: 'register',
+                Code: $('#J_PhoneCode').val(),
+                phone: $('#J_Phone').val(),
+                confirm: 1
+            };
+            $.ajax({
+                url: "<{base_url()}><{$data['lang']}>/interact/sendSmsCode",
+                type: 'POST',
+                data: getPicCodeData,
+                dataType: 'JSON',
+                success: function(d){
+                    d = JSON.parse(d);
+                    if(d.code == 200){
+                        var countDown = 60;
+                        $btn.addClass('btn-disabled').attr('disabled', 'disabled');
+                        function count(){
+                            $btn.data({'test':true});
+                            if(countDown == 0){
+                                $btn.data({'test':false});
+                                $btn.removeClass('btn-disabled').removeAttr('disabled');
+                                $btn.html('获取验证码');
+                                return false;
+                            }else{
+                                $btn.html(countDown + 's');
+                                countDown--;
+                            }
+                            setTimeout(function(){
+                                count();
+                            }, 1000);
+                        }
+                        count();
+                    }else if(d.code == 401){
+                        $.pop({
+                            type: 'tips',
+                            hideTimes: 2000,
+                            message: d.msg
+                        });
+                        return false;
+                    }
+                }
+            })
+        });
+
+        // 刷新图形验证码
+        $('.J_refreshCaptcha').on('tap', function(){
+            var t = $(this);
+            $.ajax({
+                url: '',
+                type: 'POST',
+                data: '',
+                success: function(data){
+                    // 假数据，返回图形验证码的URL
+                    data = {
+                        captchaUrl: 'http://localhost/html5/captcha/1470900381.1369.jpg'
+                    };
+                    if(data.captchaUrl) {
+                        t.find('img').attr('src', data.captchaUrl);
+                    }
+                }
+            })
+        });
+
+        //点击提交按钮
+        $('.J_SubmitBtn').bind('touchstart', function(event){
+            var regData = {
+                phone: $('#J_Phone').val(),
+                smsCode: $('#J_SmsCode').val(),
+                password: $('#J_Password').val(),
+                confirm: $('#J_Password').val(),
+                regFrom: 'html5'
+            };
+            if($('#J_Nationality').val()){
+                regData['nationality'] = $('#J_Nationality').val();
+            }
+            if($('#J_Email').val()){
+                regData['email'] = $('#J_Email').val();
+            }
+            $.ajax({
+                url: "<{base_url()}><{$data['lang']}>/interact/register",
+                data: regData,
+                type: 'POST',
+                beforeSend: function(){
+                    //检查所有表单
+                    if($.verify.check()){
+                        event.target.setAttribute('disabled', 'disabled');
+                        return true;
+                    }else{
+                        return false;
+                    }
+                },
+                success: function(data){
+                    data = JSON.parse(data);
+                    if(data.code == 200){
+                        $.pop({
+                            type: 'tips',
+                            hideTimes: 2000,
+                            message: data.msg,
+                            callback: function(){ // 注册成功,跳转到我的账户
+                                window.location = "<{base_url()}><{$data['lang']}>/fields/account";
+                            }
+                        });
+                    }else{
+                        $.pop({
+                            type: 'tips',
+                            hideTimes: 2000,
+                            message: data.msg
+                        });
+                        return false;
+                    }
+
+                    event.target.removeAttribute('disabled');
+                }
+            });
+        });
+
+        //必选点击
+        $('#J_ConfirmFieldsTerms').on('tap', function(){
+            $('.J_Verify929').eq(0).trigger('keyup');
+        });
+        //选择国籍
+        $.ChooseListInit('J_ChooseNationality','J_Nationality');
+
+        //查看密码
+        $.verify.lookover($('#J_LookOver'), $('#J_LookOver').next());
+    });
+</script>
+</body>
+</html>

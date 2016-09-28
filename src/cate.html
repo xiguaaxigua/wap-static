@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <title>分类</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+<header class="l-head">
+    <button type="button" class="back" onclick="history.go(-1)"><span class="icon icon-back"></span></button>
+    <h2 class="title">分类</h2>
+</header>
+<nav class="l-nav">
+    <a class="nav active" href="">
+        <span class="icon icon-home-active"></span>
+        <p>首页</p>
+    </a>
+    <a class="nav" href="">
+        <span class="icon icon-classify"></span>
+        <p>分类</p>
+    </a>
+    <a class="nav" href="">
+        <span class="icon icon-cart"></span>
+        <p>购物车</p>
+    </a>
+    <a class="nav" href="">
+        <span class="icon icon-foods"></span>
+        <p>食记</p>
+    </a>
+    <a class="nav" href="">
+        <span class="icon icon-me"></span>
+        <p>我</p>
+    </a>
+</nav>
+<div class="l-content cate-box751">
+    <div class="cate-item751 cate1">
+        <img class="img751" src="http://image.fieldschina.com/data/20160802/moon-cake-app-banner01.jpg" alt="">
+        <div class="title751">水果</div>
+    </div>
+    <div class="cate-item751 cate2">
+        <img class="img751" src="http://image.fieldschina.com/data/20160722/APP-slider-CN.jpg" alt="">
+        <div class="title751">蔬菜</div>
+    </div>
+    <div class="cate-item751 cate3">
+        <img class="img751" src="http://image.fieldschina.com/data/20160728/APP-ice-cream-Slider.jpg" alt="">
+        <div class="title751">酒水</div>
+    </div>
+    <div class="cate-item751 cate4">
+        <img class="img751" src="http://image.fieldschina.com/data/20160808/app-silder.jpg" alt="">
+        <div class="title751">糖果</div>
+    </div>
+    <div class="cate-item751 cate2">
+        <img class="img751" src="http://image.fieldschina.com/data/000007/Swift-Pork-CN.jpg" alt="">
+        <div class="title751">蔬菜</div>
+    </div>
+    <div class="cate-item751 cate3">
+        <img class="img751" src="http://image.fieldschina.com/data/20160808/super-food-adbox_02.jpg" alt="">
+        <div class="title751">酒水</div>
+    </div>
+    <div class="cate-item751 cate4">
+        <img class="img751" src="http://image.fieldschina.com/data/000006/adbox-600x270.png" alt="">
+        <div class="title751">糖果</div>
+    </div>
+</div>
+<script src="../dist/js/common.js?v=1.0.1"></script>
+<script src="../dist/js/product.js?v=1.0.1"></script>
+<script>
+    $(function(){
+        $(window).scroll(function (e) {
+            scrollTop = document.body.scrollTop;
+            var num = 50 - scrollTop * 0.3;
+            console.log(num);
+
+            $('.cate-item751 .img751').css('top', -num + '%');
+        });
+    });
+</script>
+</body>
+</html>

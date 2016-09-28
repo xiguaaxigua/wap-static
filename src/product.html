@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <title>商品详情</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+<div class="l-content product-box751">
+    <div class="l-head">
+        <button type="button" class="back" onclick="history.go(-1)"><span class="icon icon-back"></span></button>
+        <h1 class="title"></h1>
+    </div>
+    <div class="product-img751">
+        <div class="m-carousel" id="J_carousel">
+            <div class="carousel-lists">
+                <div class="carousel-list">
+                    <img src="http://image.fieldschina.com/product/201509/1441190633554957.jpg" alt="">
+                </div>
+                <div class="carousel-list">
+                    <img src="http://image.fieldschina.com/product/201508/1439230264433543.jpg" alt="">
+                </div>
+                <div class="carousel-list">
+                    <img src="http://image.fieldschina.com/product/201606/1467309950635424.jpg" alt="">
+                </div>
+                <div class="carousel-list">
+                    <img src="http://image.fieldschina.com/product/201505/1431690156246901.jpg" alt="">
+                </div>
+            </div>
+            <div class="carousel-dots">
+            </div>
+        </div>
+        <div class="product-tags751">
+            <img src="http://www.fieldschina.com/catalog/view/theme/fields/images/product_labels/frozen_2.png" alt="">
+            <img src="http://www.fieldschina.com/catalog/view/theme/fields/images/product_labels/import_2.png" alt="">
+        </div>
+    </div>
+    <p class="product-title751">
+        FIELDS 精选羊角(60克*2)FIELDS 精选羊角(60克*2)FIELDS 精选羊角
+    </p>
+    <!--<p class="product-price751">积分：12313</p>-->
+    <p class="product-price751">
+        ￥20
+        <span class="del">￥50</span>
+    </p>
+    <div class="product-num751">
+        <button type="button"  id="J_MinusNumber" class="number-btn number-minus">－</button>
+        <span class="local-num751" id="J_AddInNumber">1</span>
+        <button type="button" id="J_AddNumber" class="number-btn number-plus">＋</button>
+    </div>
+    <p class="product-tips751">
+        上海地区，17:00前下单当日送达。17:00前下单当
+        日送达。上海地区，17:00前下单当日送达。
+    </p>
+    <div class="product-collection751">
+        <div class="user-head751">
+            <img src="img/26.png" alt="">
+            <img src="img/26.png" alt="">
+            <img src="img/26.png" alt="">
+            <img src="img/26.png" alt="">
+            <img src="img/27.png" alt="">
+        </div>
+        1136人已收藏此商品
+    </div>
+    <div class="product-info751">
+        <p>规格：60个*5</p>
+        <p>产地：上海</p>
+        <p>存储方式：常温保存</p>
+    </div>
+    <div class="product-info751">
+        <p>产品详细介绍：</p>
+        <p>好吃好吃真好吃好吃好吃真好吃好吃好吃真好吃好吃好吃真好吃好吃好吃真好吃好吃好吃真好吃好吃好吃真好吃好吃好吃真好吃</p>
+    </div>
+    <div class="product-handle751">
+        <div class="add-cart751 clearfix">
+            <p>
+                <span class="icon icon-cart2" ></span>
+                <i class="cart-num929" id="J_CurrentNum">0</i>
+            </p>
+            <p>
+                <span class="icon icon-love J_Favorite" data-pid="27598"></span>
+            </p>
+        </div>
+        <button type="button" class="btn J_AddCart" data-pid="27598">加入购物车</button>
+    </div>
+</div>
+
+<script src="../dist/js/common.js"></script>
+<script src="../dist/js/product.js"></script>
+<script type="text/javascript">
+    $(function(){
+        var $num= $('#J_AddInNumber'),
+            cNUmber = $num.text();
+
+        //加入购物车
+        $('.J_AddCart').addCart({
+            $addNumber : $num.text(),   //加入数量
+            $status: $('#J_CurrentNum') //购物车当前数量
+        });
+
+        //加入收藏
+        var $favBtn = $('.J_Favorite'),
+            productId = $favBtn.attr('data-pid');
+        if(!!productId){
+            $favBtn.addFav(productId);
+        }
+
+        //图片滑动
+        $("#J_carousel").carousel({
+            imgBrower: true,
+            continuousScroll: true
+        });
+
+        //修改数量
+        $('#J_AddNumber').on('touchstart', function(){
+            $num.text(++cNUmber);
+        });
+        $('#J_MinusNumber').on('touchstart', function(){
+            if(cNUmber>1){
+                $num.text(--cNUmber);
+            }
+        });
+    });
+
+</script>
+</body>
+</html>

@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <title>基本信息</title>
+    <!-- top.tpl start -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+<!-- top.tpl end -->
+<!-- header.tpl start -->
+<header class="l-head">
+    <button type="button" class="back" onclick="history.go(-1)"><span class="icon icon-back"></span></button>
+    <h2 class="title">基本信息</h2>
+</header>
+<!-- header.tpl end -->
+<div class="l-content user-info-box751">
+    <form method="post" action="" class="input-lists">
+        <p class="input-list">
+            <input type="tel" class="input J_Verify929" data-verify="{required:true, type:tel, msg:手机号格式不正确 }"  placeholder="手机号码">
+        </p>
+        <p class="input-list">
+            <input type="email" class="input J_Verify929" data-verify="{required:true, type:email, msg:邮箱格式不正确}" placeholder="邮箱地址">
+        </p>
+        <p class="input-list">
+            <input type="text" class="input J_Verify929" data-verify="{required:true}" placeholder="名">
+        </p>
+        <p class="input-list">
+            <input type="text" class="input J_Verify929" data-verify="{required:true}" placeholder="姓">
+        </p>
+        <div class="input-list">
+            <p class="input-radio">
+                <input type="radio" id="maleRadio" name="user-sex" class="radio" checked>
+                <label for="maleRadio">先生</label>
+                <input type="radio" id="femaleRadio" name="user-sex" class="radio">
+                <label for="femaleRadio">女士</label>
+            </p>
+            <label class="input">称谓</label>
+        </div>
+        <p class="input-list">
+            <!--<span class="icon icon-select-down"></span>-->
+            <input type="date" class="input J_Verify929" placeholder="生日" data-verify="{required:true}" >
+        </p>
+        <p class="input-list">
+            <span class="icon icon-select-down"></span>
+            <input type="text" class="input J_Verify929" placeholder="国籍" data-verify="{required:true}" id="J_ChooseNationality" disabled >
+        </p>
+        <p class="input-list">
+            <span class="icon icon-select-down"></span>
+            <input type="text" class="input" placeholder="职业" id="J_ChooseCarrer" disabled >
+        </p>
+        <p><button type="button" disabled class="btn btn-disbaled btn-radius J_SubmitBtn">保存</button></p>
+    </form>
+</div>
+
+<!-- nationality.tpl start -->
+<!--国籍选择，独立模块-->
+<div class="m-nationality" id="J_Nationality">
+    <header class="l-head">
+        <button type="button" class="back" data-js="J_GoBack" ><span class="icon icon-back"  data-js="J_GoBack"></span></button>
+        <h2 class="title">Country</h2>
+    </header>
+    <div class="l-content country-list-box751">
+        <ul class="country-ab751">
+            <li>#</li>
+            <li><a href="#NA">A</a></li>
+            <li><a href="#NB">B</a></li>
+            <li><a href="#NC">C</a></li>
+            <li><a href="#ND">D</a></li>
+            <li><a href="#NE">E</a></li>
+            <li><a href="#NF">F</a></li>
+            <li><a href="#NG">G</a></li>
+            <li><a href="#NH">H</a></li>
+            <li><a href="#NI">I</a></li>
+            <li><a href="#NJ">J</a></li>
+            <li><a href="#NK">K</a></li>
+            <li><a href="#NL">L</a></li>
+        </ul>
+        <dl>
+            <dt class="floor country-item751" id="NA">A</dt>
+            <dd class="country-item751" data-country="" data-id="0" data-js="J_ChooseItem">Afghanistan1</dd>
+            <dd class="country-item751" data-country="" data-id="1" data-js="J_ChooseItem">Afghanistan3</dd>
+            <dd class="country-item751" data-country="" data-id="2" data-js="J_ChooseItem">Afghanistan2</dd>
+            <dd class="country-item751" data-country="" data-id="3" data-js="J_ChooseItem">Afghanistan3</dd>
+            <dd class="country-item751" data-country="" data-id="4" data-js="J_ChooseItem">Afghanistan4</dd>
+            <dd class="country-item751" data-country="" data-id="5" data-js="J_ChooseItem">Afghanistan5</dd>
+        </dl>
+        <dl>
+            <dt class="floor country-item751" id="NB">B</dt>
+            <dd class="country-item751" data-country="" data-js="J_ChooseItem">Afghanistan</dd>
+            <dd class="country-item751" data-country="" data-js="J_ChooseItem">Afghanistan</dd>
+            <dd class="country-item751" data-country="" data-js="J_ChooseItem">Afghanistan</dd>
+            <dd class="country-item751" data-country="" data-js="J_ChooseItem">Afghanistan</dd>
+            <dd class="country-item751" data-country="" data-js="J_ChooseItem">Afghanistan</dd>
+            <dd class="country-item751" data-country="" data-js="J_ChooseItem">Afghanistan</dd>
+        </dl>
+        <dl>
+            <dt class="floor country-item751" id="NC">C</dt>
+            <dd class="country-item751" data-country="" data-js="J_ChooseItem">Afghanistan</dd>
+            <dd class="country-item751" data-country="" data-js="J_ChooseItem">Afghanistan</dd>
+            <dd class="country-item751" data-country="" data-js="J_ChooseItem">Afghanistan</dd>
+            <dd class="country-item751" data-country="" data-js="J_ChooseItem">Afghanistan</dd>
+            <dd class="country-item751" data-country="" data-js="J_ChooseItem">Afghanistan</dd>
+            <dd class="country-item751" data-country="" data-js="J_ChooseItem">Afghanistan</dd>
+        </dl>
+        <dl>
+            <dt class="floor country-item751" id="ND">D</dt>
+            <dd class="country-item751" data-country="" data-js="J_ChooseItem">Afghanistan</dd>
+            <dd class="country-item751" data-country="" data-js="J_ChooseItem">Afghanistan</dd>
+            <dd class="country-item751" data-country="" data-js="J_ChooseItem">Afghanistan</dd>
+            <dd class="country-item751" data-country="" data-js="J_ChooseItem">Afghanistan</dd>
+            <dd class="country-item751" data-country="" data-js="J_ChooseItem">Afghanistan</dd>
+            <dd class="country-item751" data-country="" data-js="J_ChooseItem">Afghanistan</dd>
+        </dl>
+    </div>
+</div>
+<!-- nationality.tpl end -->
+
+<!-- carrer.tpl start -->
+<!--职业选择-->
+<div class="m-carrer" id="J_Carrer">
+    <header class="l-head">
+        <button type="button" class="back" data-js="J_GoBack"><span class="icon icon-back" data-js="J_GoBack"></span></button>
+        <h2 class="title">职业选择</h2>
+    </header>
+    <div class="l-content carrer-list-box751">
+        <dl>
+            <dd class="carrer-item751" data-carrer="" data-id="0" data-js="J_ChooseItem">医生</dd>
+            <dd class="carrer-item751" data-carrer="" data-id="1" data-js="J_ChooseItem">护士</dd>
+            <dd class="carrer-item751" data-carrer="" data-id="2" data-js="J_ChooseItem">教师</dd>
+            <dd class="carrer-item751" data-carrer="" data-id="3" data-js="J_ChooseItem">司机</dd>
+            <dd class="carrer-item751" data-carrer="" data-id="4" data-js="J_ChooseItem">飞行员</dd>
+            <dd class="carrer-item751" data-carrer="" data-id="5" data-js="J_ChooseItem">工兵</dd>
+            <dd class="carrer-item751" data-carrer="" data-id="6" data-js="J_ChooseItem">医生</dd>
+            <dd class="carrer-item751" data-carrer="" data-id="7" data-js="J_ChooseItem">护士</dd>
+            <dd class="carrer-item751" data-carrer="" data-id="8" data-js="J_ChooseItem">教师</dd>
+            <dd class="carrer-item751" data-carrer="" data-id="9" data-js="J_ChooseItem">司机</dd>
+            <dd class="carrer-item751" data-carrer="" data-id="10" data-js="J_ChooseItem">飞行员</dd>
+            <dd class="carrer-item751" data-carrer="" data-id="11" data-js="J_ChooseItem">工兵</dd>
+        </dl>
+    </div>
+</div>
+<!-- carrer.tpl end -->
+
+<!-- bottom.tpl start -->
+<script src="../dist/js/common.js?v=1.0.1"></script>
+<script src="../dist/js/user.js?v=1.0.1"></script>
+<!-- bottom.tpl start -->
+<script type="text/javascript">
+    $(function(){
+        //点击提交按钮
+        $('.J_SubmitBtn').bind('touchstart', function(event){
+            $.ajax({
+                url:'',
+                data:'',
+                type:'POST',
+                beforeSend: function(){
+                    //检查所有表单
+                    if($.verify.check()){
+                        //暂时忽略登录登录中的状态
+                        event.target.setAttribute('disabled', 'disabled');
+                        event.target.innerHTML = '登录中';
+                        return true;
+                    }else{
+                        return false;
+                    }
+                },
+                success: function(){
+                    event.target.removeAttribute('disabled');
+                    event.target.innerHTML = '登录';
+                    console.log('success');
+                }
+            });
+        });
+
+        //选择国籍
+        $.ChooseListInit('J_ChooseNationality','J_Nationality');
+        //选择职业
+        $.ChooseListInit('J_ChooseCarrer','J_Carrer');
+    });
+</script>
+</body>
+</html>

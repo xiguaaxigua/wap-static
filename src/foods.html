@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <title>食记</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+<header class="l-head">
+    <button type="button" class="back" onclick="history.go(-1)"><span class="icon icon-back"></span></button>
+    <h2 class="title">食记</h2>
+</header>
+<div class="l-content foods-box751" id="J_ScrollContain">
+    <div class="m-tab" id="J_TabCat">
+        <ul class="tab-buttons clearfix">
+            <li data-categoryid="1" class="tab-button active">标签页1</li>
+            <li data-categoryid="2" class="tab-button">标签页2</li>
+            <li data-categoryid="3" class="tab-button">标签页3</li>
+        </ul>
+        <div class="m-foods-card clearfix" id="J_TabContent" data-page="1">
+            <div class="foods-card-item">
+                <a class="foods-card-img" href="">
+                    <img src="http://image.fieldschina.com/data/00013/fod-637636.jpg" alt="">
+                </a>
+                <div class="foods-card-info">
+                    <a href="">1111111从未见过的柠檬</a>
+                    <p>西瓜堪称“瓜中之王”，原产于非洲。唐代引入新疆，五代时期引入中土。西瓜性原产于非洲。唐代引入新疆，五代时期引入中土。西瓜原产于非洲。唐代引入新疆，五代时期引入中土。西瓜寒，味甘甜；它有清热</p>
+                </div>
+            </div>
+            <div class="foods-card-item">
+                <a class="foods-card-img" href="">
+                    <img src="http://image.fieldschina.com/data/00013/fod-637636.jpg" alt="">
+                </a>
+                <div class="foods-card-info">
+                    <a href="">从未见过的柠檬</a>
+                    <p>西瓜堪称“瓜中之王”，原产于非洲。唐代引入新疆，五代时期引入中土。西瓜性原产于非洲。唐代引入新疆，五代时期引入中土。西瓜原产于非洲。唐代引入新疆，五代时期引入中土。西瓜寒，味甘甜；它有清热</p>
+                </div>
+            </div>
+            <div class="foods-card-item">
+                <a class="foods-card-img" href="">
+                    <img src="http://image.fieldschina.com/data/00013/fod-637636.jpg" alt="">
+                </a>
+                <div class="foods-card-info">
+                    <a href="">从未见过的柠檬</a>
+                    <p>西瓜堪称“瓜中之王”，原产于非洲。唐代引入新疆，五代时期引入中土。西瓜性原产于非洲。唐代引入新疆，五代时期引入中土。西瓜原产于非洲。唐代引入新疆，五代时期引入中土。西瓜寒，味甘甜；它有清热</p>
+                </div>
+            </div>
+            <div class="foods-card-item">
+                <a class="foods-card-img" href="">
+                    <img src="http://image.fieldschina.com/data/00013/fod-637636.jpg" alt="">
+                </a>
+                <div class="foods-card-info">
+                    <a href="">从未见过的柠檬</a>
+                    <p>西瓜堪称“瓜中之王”，原产于非洲。唐代引入新疆，五代时期引入中土。西瓜性原产于非洲。唐代引入新疆，五代时期引入中土。西瓜原产于非洲。唐代引入新疆，五代时期引入中土。西瓜寒，味甘甜；它有清热</p>
+                </div>
+            </div>
+            <div class="foods-card-item">
+                <a class="foods-card-img" href="">
+                    <img src="http://image.fieldschina.com/data/00013/fod-637636.jpg" alt="">
+                </a>
+                <div class="foods-card-info">
+                    <a href="">从未见过的柠檬</a>
+                    <p>西瓜堪称“瓜中之王”，原产于非洲。唐代引入新疆，五代时期引入中土。西瓜性原产于非洲。唐代引入新疆，五代时期引入中土。西瓜原产于非洲。唐代引入新疆，五代时期引入中土。西瓜寒，味甘甜；它有清热</p>
+                </div>
+            </div>
+            <div class="foods-card-item">
+                <a class="foods-card-img" href="">
+                    <img src="http://image.fieldschina.com/data/00013/fod-637636.jpg" alt="">
+                </a>
+                <div class="foods-card-info">
+                    <a href="">从未见过的柠檬</a>
+                    <p>西瓜堪称“瓜中之王”，原产于非洲。唐代引入新疆，五代时期引入中土。西瓜性原产于非洲。唐代引入新疆，五代时期引入中土。西瓜原产于非洲。唐代引入新疆，五代时期引入中土。西瓜寒，味甘甜；它有清热</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <p class="end751" id="J_LoadState">上拉加载更多...</p>
+</div>
+
+<script src="../dist/js/common.js?v=1.0.1"></script>
+<script src="../dist/js/product.js?v=1.0.1"></script>
+<script type="text/javascript">
+    $(function(){
+        //tab切换
+        $("#J_tab").toggleTab();
+        //加载数据
+        !function(){
+            //加载数据
+            var loadData = function(catId, page){
+                var category_id = catId,
+                    $tabContent = $('#J_TabContent'),
+                    pages = page || $tabContent.attr('data-page');
+                $.ajax({
+                    url:'',
+                    type: 'post',
+                    //data:{'category_id': category_id, 'page':page},
+                    success: function(data){
+                        /**假数据，每次加载20个**/
+                        data = {
+                            success: true,
+                            page: 0,
+                            json: [
+                                {
+                                    img:'http://image.fieldschina.com/data/00003/415000e050d099bd2f5.jpg',
+                                    href:'foods-details.html',
+                                    til:'半熟蛋Coddled Egg',
+                                    content:'半熟蛋——口感跟水波蛋相似，蛋白刚刚凝固起来，软软嫩嫩，内心却是呈现鲜艳金黄色的流质状态，简单撒盐...'
+                                },
+                                {
+                                    img:'http://image.fieldschina.com/data/0007/Pink_20Lemon_20-_204461_20-_20Square_medium.jpg',
+                                    href:'foods-details.html',
+                                    til:'从未见过的柠檬',
+                                    content:'最近吃到了一种以前没有见过的柠檬，第一眼看到就想用“独特”来形容它。名字很好听，叫“pink le...'
+                                },
+                                {
+                                    img:'http://image.fieldschina.com/data/0006/201604141.jpg',
+                                    href:'foods-details.html',
+                                    til:' 风靡好莱坞的低卡零食',
+                                    content:'铁含量甚至高于同等分量的牛肉。它就像牛油果一样，风靡了好莱坞明星的餐桌，又香又脆，低卡低热量。有了...'
+                                },
+                                {
+                                    img:'http://image.fieldschina.com/data/0004/e2091bb8c1833f606343a1702ff67314.jpg',
+                                    href:'foods-details.html',
+                                    til:'吃豌豆饭咯',
+                                    content:'刚出锅的豌豆饭，色泽金黄，因沾着腊肉的油而透亮，混合着豌豆和春笋的清香，腊肉和香菇的浓郁。...'
+                                },
+                                {
+                                    img:'http://image.fieldschina.com/data/00003/415000e050d099bd2f5.jpg',
+                                    href:'foods-details.html',
+                                    til:'半熟蛋Coddled Egg',
+                                    content:'半熟蛋——口感跟水波蛋相似，蛋白刚刚凝固起来，软软嫩嫩，内心却是呈现鲜艳金黄色的流质状态，简单撒盐...'
+                                },
+                                {
+                                    img:'http://image.fieldschina.com/data/0007/Pink_20Lemon_20-_204461_20-_20Square_medium.jpg',
+                                    href:'foods-details.html',
+                                    til:'从未见过的柠檬',
+                                    content:'最近吃到了一种以前没有见过的柠檬，第一眼看到就想用“独特”来形容它。名字很好听，叫“pink le...'
+                                },
+                                {
+                                    img:'http://image.fieldschina.com/data/0006/201604141.jpg',
+                                    href:'foods-details.html',
+                                    til:' 风靡好莱坞的低卡零食',
+                                    content:'铁含量甚至高于同等分量的牛肉。它就像牛油果一样，风靡了好莱坞明星的餐桌，又香又脆，低卡低热量。有了...'
+                                },
+                                {
+                                    img:'http://image.fieldschina.com/data/0004/e2091bb8c1833f606343a1702ff67314.jpg',
+                                    href:'foods-details.html',
+                                    til:'吃豌豆饭咯',
+                                    content:'刚出锅的豌豆饭，色泽金黄，因沾着腊肉的油而透亮，混合着豌豆和春笋的清香，腊肉和香菇的浓郁。...'
+                                }
+                            ],
+                            message:'加载完成'
+                        };
+                        if(data.success){
+                            //数据填充
+                            var html='';
+                            for(var i in data.json){
+                                html+='<div class=\"foods-card-item\"><a class=\"foods-card-img\" href=\"'+data.json[i].href+'\"><img src=\"'+data.json[i].img+'\" alt=\"\"></a><div class=\"foods-card-info\"><a href=\"\">'+data.json[i].til+'</a><p>'+data.json[i].content+'</p></div></div>';
+                            }
+                            if(data.page==0){
+                                $tabContent.html(html);
+                            }else{
+                                $tabContent.append(html);
+                            }
+                            $tabContent.attr('data-page',data.page);
+                            $('#J_LoadState').text();
+                        }
+
+                    }
+                })
+            };
+            //点击菜单切换时，加载数据
+            $('#J_TabCat').on('tap', function(event){
+                var target = event.target || event.srcElement,
+                    catId = target.getAttribute('data-categoryid');
+                if(catId && !$(target).hasClass('active')){
+                    loadData(catId);
+                    $(target).addClass('active').siblings('li').removeClass('active');
+                }
+            });
+
+            //下拉的时候加载数据
+            $(window).scroll(function(e){
+                var $con = $('#J_ScrollContain'),
+                    height= $con.height(),
+                    screenHeight = $('body').height(),
+                    offsetHeight= $(window).scrollTop();
+
+                //当距离底部小于一屏幕高度
+                if((height-screenHeight-offsetHeight)<screenHeight){
+                    var $content = $('#J_TabContent'),
+                        page = parseInt($content.attr('data-page')),
+                        catId;
+                    if(page){
+                        catId = $('#J_TabCat').find('active').attr('data-categoryid');
+                        loadData(catId, page);
+                    }
+                }
+            });
+        }();
+    });
+</script>
+</body>
+</html>

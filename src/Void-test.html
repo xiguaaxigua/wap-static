@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <title>注册</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+<header class="l-head">
+    <button type="button" class="back" onclick="history.go(-1)"><span class="icon icon-back"></span></button>
+    <h1 class="title">注册</h1>
+    <!--<button class="handle">编辑</button>-->
+    <!--<button class="handle">
+        <span class="icon icon-forward"></span>
+    </button>-->
+</header>
+<div class="l-content">
+    <div class="reg-box751">
+        <form action="" class="m-form">
+            <div class="m-form-item">
+                <span class="icon icon-phone item-label"></span>
+                <input type="tel" class="item-input" placeholder="手机号码">
+            </div>
+            <div class="m-form-item">
+                <span class="icon icon-key item-label"></span>
+                <button class="btn item-btn">获取验证码</button>
+                <input type="text" class="item-input" placeholder="验证码">
+            </div>
+            <div class="m-form-item">
+                <span class="icon icon-earth item-label"></span>
+                <input type="text" class="item-input" placeholder="Nationality" disabled>
+            </div>
+            <div class="m-form-item">
+                <span class="icon icon-lock-off item-label"></span>
+                <span class="icon icon-eye-close item-icon"></span>
+                <input type="password" class="item-input" placeholder="输入密码">
+            </div>
+
+            <label for="confirmFieldsTerms" class="confirm-fields-terms751"><input id="confirmFieldsTerms" type="checkbox" class="checkbox-square">我已阅读并同意<a href="#">甫田网服务条款</a></label>
+            <button type="button" disabled class="btn btn-radius">注册</button>
+            <a class="login-account-link751" href="login.html">已有账号？去登录！</a>
+        </form>
+    </div>
+</div>
+<script src="../dist/js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,708 @@
+@charset "utf-8";
+// loading
+.m-loading{
+    position: fixed;
+    z-index: 999;
+    top: 0;
+    left: 0;
+
+    display: none;
+
+    width: 100%;
+    height: 100%;
+
+    background-color: rgba(0,0,0,.3);
+    .loading{
+        position: absolute;
+        top: 30%;
+        right: 0;
+        left: 0;
+
+        width: 35px;
+        margin: 0 auto;
+
+        -webkit-animation: loading 2s infinite linear;
+             -o-animation: loading 2s infinite linear;
+                animation: loading 2s infinite linear;
+    }
+}
+@keyframes loading{
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}
+
+@-moz-keyframes loading{
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}
+
+@-webkit-keyframes loading{
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}
+
+@-o-keyframes loading{
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}
+
+// 轮播
+.m-carousel{
+    position: relative;
+
+    width: 100%;
+    height: 100%;
+    background: #fff;
+    overflow: hidden;
+    .carousel-lists{
+        display: -webkit-box;
+        width: 100%;
+        height: 100%;
+
+        text-align: left;
+    }
+    .carousel-list{
+        width: 100%;
+        height: 100%;
+
+        background-color: #fff;
+        img{
+            display: block;
+
+            width: 80%;
+            margin: 0 auto;
+        }
+    }
+    .carousel-dots{
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        margin: 0 auto;
+        text-align: center;
+
+        background-color: transparent;
+        .active{
+            background-color: $green;
+        }
+    }
+    .carousel-dot{
+        display: inline-block;
+
+        width: 10px;
+        height: 10px;
+        margin: 0 4px;
+
+        list-style-type: none;
+
+        border-radius: 50%;
+        background-color: rgba(0, 0, 0, .3);
+    }
+}
+
+// 图片浏览器,覆盖轮播的效果
+.m-carousel-brower{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.7);
+    overflow: hidden;
+    z-index: 13;
+    .carousel-lists{
+        display: -webkit-box;
+
+        text-align: left;
+    }
+    .carousel-list{
+        background-color: transparent;
+        position: relative;
+        img{
+            position: absolute;
+            top: 0;
+            bottom: 0;
+
+            display: inline-block;
+            vertical-align: middle;
+
+            width: 100%;
+            margin: auto;
+        }
+    }
+    .carousel-dots{
+        position: absolute;
+        bottom: 30px;
+        left: 0;
+        right: 0;
+        margin: 0 auto;
+        text-align: center;
+
+        background-color: transparent;
+        .active{
+            background-color: $green;
+        }
+    }
+    .carousel-dot{
+        display: inline-block;
+
+        width: 10px;
+        height: 10px;
+        margin: 0 4px;
+
+        list-style-type: none;
+
+        border-radius: 50%;
+        background-color: rgba(0, 0, 0, .3);
+    }
+}
+
+// 管理地址页面列表
+.m-address-list{
+    width: 100%;
+    height: 100%;
+
+    background-color: #fff;
+    .icon{
+        cursor: po;
+    }
+    .item-content{
+        @include font14();
+
+        position: relative;
+
+        width: 100%;
+        height: 100%;
+        margin: 0 auto;
+        padding: 8px 20px;
+
+        border-top: 1px solid $bg-light-grey;
+        border-bottom: 7px solid $bg-light-grey;
+    }
+    .item-address-info{
+        position: relative;
+
+        width: 100% ;
+
+        border-bottom: 1px solid $bg-light-grey;
+    }
+    .item-address-name{
+        @include font14();
+        line-height: 1.3;
+
+        width: 60%;
+
+        color: $font-dark-grey;
+        span{
+            @include font12();
+            line-height: 1.4;
+
+            position: relative;
+
+            display: inline-block;
+
+            padding: 1px 8px 0 8px;
+
+            color: #69bd27;
+            border: 1px solid #69bd27;
+            border-radius: 9px;
+        }
+    }
+    .item-address-phone{
+        position: absolute;
+        top: 0;
+        right: 0;
+
+        width: 40%;
+
+        text-align: right;
+        color: $font-dark-grey;
+    }
+    .item-address-detail{
+        @include font12();
+
+        margin: 10px 0;
+        min-height: 2em;
+
+        color: $font-grey;
+    }
+    .item-address-handle{
+        line-height: 20px;
+
+        position: relative;
+
+        width: 100%;
+        padding: 5px 0 5px 60%;
+
+        text-align: right;
+        .icon:last-child{
+            margin-left: 15px;
+        }
+    }
+    .item-address-default{
+        @include font12();
+
+        position: absolute;
+        left: 0;
+
+        color: $pink;
+    }
+}
+
+// 选项卡 不要在此处定义.active,请到各自的页面中
+.m-tab{
+    width: 100%;
+    .tab-buttons{
+        background-color: $bg-light-grey;
+    }
+    .tab-button{
+        width: 50%;
+        float: left;
+        text-align: center;
+        box-sizing: border-box;
+        @include font12();
+        line-height: 36px;
+        color: $font-grey;
+    }
+    .tab-contents{
+        display: -webkit-box;
+        width: 100%;
+        .tab-content{
+            height: 100%;
+            width: 100%;
+            // display: none;
+        }
+        .active{
+            display: block;
+        }
+    }
+}
+
+/************************! 列表项布局 ****************************/
+.m-table-lists{
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-left: 0;
+    list-style: none;
+    background-color: #fff;
+    font-size: 0;
+    .table-list{
+        position: relative;
+        overflow: hidden;
+        padding: 0 20px;
+        -webkit-touch-callout: none;
+        border-bottom: 1px solid $border-light-grey;
+        &:first-child{
+            border-top: 1px solid $border-light-grey;
+        }
+        a{
+            display: inline-block;
+            line-height: 40px;
+            @include font14();
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            color: $font-dark-grey;
+        }
+    }
+    .icon{
+        position: absolute;
+        top: 16px;
+        right: 20px;
+    }
+    .tips{
+        @include font12();
+        position: absolute;
+        top: 14px;
+        right: 40px;
+        margin: 0;
+        padding: 0;
+        line-height: 1;
+        color: $font-light-grey;
+    }
+}
+
+// 横向
+.m-card-widthwise {
+    position: relative;
+    padding: 10px 10px 0 10px;
+    &:last-child {
+        padding-bottom: 10px;
+    }
+    .card-label {
+        min-height: 112px;
+    }
+    .card-img {
+        position: absolute;
+        top: 22px;
+        left: 22px;
+
+        height: 100px;
+        img {
+            height: 100%;
+        }
+    }
+    .card-info {
+        width: 100%;
+        height: 100%;
+        min-height: 114px;
+        padding: 10px 10px 0 120px;
+
+        border-bottom: 1px solid $bg-light-grey;
+        border-top-left-radius: $radius;
+        border-top-right-radius: $radius;
+        background-color: #fff;
+        a {
+            @include font14();
+            line-height: 1.3;
+            margin: 8px 0;
+
+            color: $font-grey;
+
+            @include hideMultiLine(3);
+        }
+        p {
+            @include font12();
+            line-height: 1.5;
+
+            color: $font-light-grey;
+
+            @include hideSingleLine();
+        }
+    }
+    .card-price {
+        line-height: 28px;
+
+        position: relative;
+        padding-left: 120px;
+
+        border-bottom-right-radius: $radius;
+        border-bottom-left-radius: $radius;
+        background-color: #fff;
+    }
+    .price {
+        @include font14();
+
+        margin-right: 10px;
+
+        color: $green;
+    }
+    .del {
+        @include font12();
+
+        text-decoration: line-through;
+
+        color: $font-light-grey;
+    }
+    .icon-cart-active {
+        position: absolute;
+        right: 10px;
+        bottom: 6px;
+    }
+    .icon-love-green{
+        position: absolute;
+        right: 40px;
+        bottom: 6px;
+    }
+}
+
+// 纵向
+.m-card-heightwise {
+    position: relative;
+    top: 0;
+    left: 0;
+    display: inline-block;
+    width: 45%;
+    margin-top: 3.5%;
+    &:last-child {
+        padding-bottom: 3.5%;
+    }
+    &:nth-child(2n-1) {
+        margin-right: 0;
+        margin-left: 3.5%;
+    }
+    &:nth-child(2n) {
+        margin-right: 3.5%;
+        margin-left: 3%;
+    }
+    .card-label {
+        min-height: 112px;
+    }
+    .card-img {
+        border-top-left-radius: $radius;
+        border-top-right-radius: $radius;
+        background-color: #fff;
+        text-align: center;
+        img {
+            width: 80%;
+        }
+    }
+    .card-info {
+        padding: 0 10px 10px 10px;
+
+        border-bottom: 1px solid $bg-light-grey;
+        background-color: #fff;
+        a {
+            @include font14();
+            min-height: 2.6em;
+            line-height: 1.3;
+            margin-bottom: 7px;
+
+            color: $font-grey;
+
+            @include hideMultiLine(2);
+        }
+        p {
+            @include font12();
+            line-height: 1.5;
+
+            color: $font-light-grey;
+
+            @include hideSingleLine();
+        }
+    }
+    .card-price {
+        line-height: 28px;
+
+        position: relative;
+        padding: 0 10px;
+
+        border-bottom-right-radius: $radius;
+        border-bottom-left-radius: $radius;
+        background-color: #fff;
+    }
+    .price {
+        @include font14();
+
+        margin-right: 5px;
+
+        color: $green;
+    }
+    .del {
+        @include font12();
+
+        text-decoration: line-through;
+
+        color: $font-light-grey;
+    }
+    .icon {
+        position: absolute;
+        right: 10px;
+        bottom: 6px;
+    }
+}
+
+// 食记页面 卡片
+.m-foods-card{
+    width: 100%;
+    height: 100%;
+    .foods-card-item{
+        width: 100%;
+        height: 110px;
+        padding: 10px;
+        position: relative;
+        background-color: #fff;
+        border-bottom: 1px solid $bg-light-grey;
+    }
+    .foods-card-img{
+        z-index: 2;
+        position: absolute;
+        width: 125px;
+        img{
+            width: 100%;
+        }
+    }
+    .foods-card-info{
+        width: 100%;
+        height: 100%;
+        box-sizing: border-box;
+        padding-left: 135px;
+        a{
+            @include font14();
+            color: $font-dark-grey;
+            margin: 7px 0;
+            @include hideMultiLine(1);
+        }
+        p{
+            @include font12();
+            line-height: 1.3;
+            color: $font-light-grey;
+            @include hideMultiLine(4);
+        }
+    }
+}
+
+// 可以滑动切换的分类
+.m-cate{
+    width: 100%;
+    overflow: hidden;
+    overflow-x: scroll;
+    background-color: #fff;
+    white-space: nowrap;
+    border-bottom: 1px solid $border-light-grey;
+    a{
+        display: inline-block;
+        padding: 0 10px;
+        line-height: 40px;
+        color: $font-dark-grey;
+        @include font12();
+        &:first-child{
+            margin-left: 0;
+        }
+    }
+    .active{
+        color: $green;
+        border-bottom: 1px solid $green;
+    }
+    &::-webkit-scrollbar{
+        width: 0;
+        height: 0;
+    }
+}
+
+/****! 遮罩 ****/
+.m-mask {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 999;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255,255,255,0.1);
+    @include transition(0.2);
+}
+.m-tips {
+    position: relative;
+    top: 30%;
+    width: 70%;
+    padding: 8px 5%;
+    margin: 0 15%;
+    @include radius(4px);
+    color: #fff;
+    text-align: center;
+    background: rgba(0,0,0,0.8);
+    word-break: break-all;
+}
+
+/****! 选择国籍 ****/
+.m-nationality,
+.m-career,
+.m-choose-city {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+}
+/****! 选择语言 ****/
+.m-toggle-language {
+    display: none;
+    position: absolute;
+    top: 48px;
+    right: 0;
+    padding: 5px;
+    border: 1px solid #ccc;
+    background-color: #fff;
+    li {
+        position: relative;
+        height: 20px;
+        padding: 5px 0;
+        line-height: 20px;
+        .icon {
+            position: absolute;
+            top: 5px;
+            left: 5px;
+        }
+        .lang {
+            display: inline-block;
+            height: 20px;
+            margin-left: 30px;
+            font-style: normal;
+            font-size: $font-sm;
+        }
+    }
+}
+
+/*! 确认框遮罩*/
+.m-alert-mask{
+    position: fixed;
+    z-index: 99;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.7);
+    .m-mask-content{
+        z-index: 999;
+        position: absolute;
+        top: 30%;
+        left: 15%;
+        margin: auto;
+        width: 70%;
+        min-height: 92px;
+        background-color: #fff;
+        border-radius: $radius;
+        word-break: break-all;
+    }
+    .m-mask-info{
+        padding: 20px 10px;
+        width: 100%;
+        text-align: center;
+        @include font14();
+        color: $font-dark-grey;
+        border-bottom: 1px solid $border-light-grey;
+    }
+    .m-mask-handle{
+        width: 100%;
+        line-height: 35px;
+        span{
+            display: inline-block;
+            width: 49%;
+            text-align: center;
+            @include font14();
+            color: $font-dark-grey;
+            &:first-child{
+                float: left;
+                border-right: 1px solid $border-light-grey;
+            }
+            &:last-child{
+                float: right;
+            }
+        }
+    }
+    .m-mask-img{
+        padding: 10px 20px;
+        p{
+            line-height: 1.5;
+            color: $font-grey;
+            @include font12();
+            text-align: center;
+        }
+        img{
+            display: block;
+            margin: 0 auto;
+            width: 60%;
+        }
+    }
+}

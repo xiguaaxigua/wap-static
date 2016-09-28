@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <title>绑定邮箱</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+<header class="l-head">
+    <button type="button" class="back" onclick="history.go(-1)"><span class="icon icon-back"></span></button>
+    <h2 class="title">绑定邮箱</h2>
+</header>
+<div class="l-content">
+    <div class="bind-email-box751">
+        <form method="post" action="" id="J_BindEmail" class="m-form">
+            <div class="m-form-item">
+                <span class="icon icon-green-me item-label"></span>
+                <input type="email" class="item-input J_Verify929" id="J_Email" data-verify="{required:true, type:tel}" placeholder="邮箱地址">
+            </div>
+            <div class="m-form-item">
+                <span class="icon icon-key item-label"></span>
+                <input type="text" class="item-input J_Verify929" id="J_EmailCode" data-verify="{required:true}" placeholder="图片验证码">
+                <span class="code929"><img src="img/10.png" alt=""></span>
+            </div>
+            <div class="m-form-item">
+                <span class="icon icon-key item-label"></span>
+                <button type="button" disabled id="J_CodeBtn" class="btn btn-disabled item-btn">获取验证码</button>
+                <input type="text" class="item-input J_Verify929" data-verify="{required:true}" placeholder="验证码">
+            </div>
+            <p>
+                <button type="button" disabled class="btn  btn-radius J_SubmitBtn">确认</button>
+            </p>
+        </form>
+    </div>
+</div>
+<script src="../dist/js/common.js?v=1.0.1"></script>
+<script src="../dist/js/user.js?v=1.0.1"></script>
+<script type="text/javascript">
+    $(function(){
+
+        //验证码是否可点击
+        var $email = $('#J_Email'), $code = $('#J_EmailCode'), $btn = $('#J_CodeBtn');
+        $('#J_BindEmail').bind('keyup change', function(event){
+            console.log(22);
+            if(/^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/.test($email.val()) && $code.val()!=''){
+                $btn.removeClass('btn-disabled').removeAttr('disabled');
+            }else{
+                $btn.addClass('btn-disabled').attr('disabled');
+            }
+        });
+
+        //获取验证码
+        $btn.on('touchstart', function(){
+            $.ajax({
+                url:'',
+                type:'POST',
+                data:'',
+                beforeSend:function(){
+                    if(!/^[0-9a-zA-Z]{4}$/.test($code.val())){
+                        $.pop({
+                            type: 'tips',
+                            hideTimes: 2000,
+                            message: '图片验证码不正确'
+                        });
+                        return false;
+                    }
+                },
+                success: function(){
+                    console.log('scr');
+                }
+            })
+        });
+
+        //点击提交按钮
+        $('.J_SubmitBtn').bind('touchstart', function(event){
+            $.ajax({
+                url:'',
+                data:'',
+                type:'POST',
+                beforeSend: function(){
+                    //检查所有表单
+                    if($.verify.check()){
+                        //暂时忽略登录登录中的状态
+                        event.target.setAttribute('disabled', 'disabled');
+                        event.target.innerHTML = '确认中';
+                        return true;
+                    }else{
+                        return false;
+                    }
+                },
+                success: function(){
+                    event.target.removeAttribute('disabled');
+                    event.target.innerHTML = '确认';
+                    console.log('success');
+                }
+            });
+        });
+    });
+</script>
+</body>
+</html>

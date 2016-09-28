@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <title>建议反馈</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+<header class="l-head">
+    <button type="button" class="back" onclick="history.go(-1)"><span class="icon icon-back"></span></button>
+    <h2 class="title">建议反馈</h2>
+</header>
+<div class="l-content suggest-box751">
+    <form action="">
+        <p class="suggest-text751">
+            <textarea name="" class="J_Verify929" id="J_Textarea" data-verify="{required:true}" ></textarea>
+        </p>
+        <p class="customer-email751">
+            <input type="email" class="J_Verify929" id="J_Email" data-verify="{required:true, type:email, msg:邮箱格式不正确}" placeholder="*邮箱地址">
+        </p>
+        <p class="btn-wrap751">
+            <button type="button" class="btn btn-radius J_SubmitBtn" disabled>提交</button>
+        </p>
+    </form>
+</div>
+<script src="../dist/js/common.js?v=1.0.1"></script>
+<script src="../dist/js/user.js?v=1.0.1"></script>
+<script type="text/javascript">
+    $(function(){
+        //点击提交按钮
+        $('.J_SubmitBtn').bind('touchstart', function(event){
+            var text = $('#J_Textarea').val(),
+                email = $('#J_Email').val();
+            $.ajax({
+                url:'',
+                type:'POST',
+                data:{'text':text, 'email':text},
+                beforeSend: function(){
+                    //检查所有表单
+                    if($.verify.check()){
+                        //暂时忽略登录登录中的状态
+                        event.target.setAttribute('disabled', 'disabled');
+                        event.target.innerHTML = '登录中';
+                        return true;
+                    }else{
+                        return false;
+                    }
+                },
+                success: function(){
+                    event.target.removeAttribute('disabled');
+                    event.target.innerHTML = '登录';
+                    console.log('success');
+                }
+            });
+        });
+
+    });
+</script>
+</body>
+</html>

@@ -1,0 +1,369 @@
+@charset "utf-8";
+@import "common/reset";
+@import "common/_global";
+@import "common/icon";
+@import "common/form";
+@import "common/module";
+@import "common/layout";
+// layout.scss
+.l-content {
+    width: 1200px;
+    min-height: 400px;
+    margin: -25px auto 30px auto;
+    background-color: #fff;
+    @include de-shadow();
+}
+
+// module.scss
+.m-breadcrumb {
+    line-height: 2;
+    font-size: 14px;
+    color: nth($font-color, 2);
+    a {
+        color: inherit;
+    }
+}
+
+// btn
+.btn {
+    font-size: 16px;
+    line-height: 40px;
+    border: 1px solid #42be79;
+    text-align: center;
+    padding: 0 20px;
+    color: #fff;
+    background-color: #46b577;
+    &:active {
+        background-color: lighten($link-color, 10%);
+        border-color: lighten($link-color, 10%);
+    }
+    &:disabled {
+        border-color: nth($border-color, 5);
+        background-color: nth($border-color, 5);
+        color: nth($bg-color, 1);
+    }
+}
+
+
+/* 商品详情页 */
+
+.product-box751 {
+    @include box-sizing(border-box);
+    padding: 10px 28px 10px 75px;
+    .title751 {
+        font-size: 16px;
+        height: 36px;
+        border-bottom: 1px solid #ddd;
+        position: relative;
+        line-height: 36px;
+        span {
+            display: inline-block;
+            color: nth($font-color, 5);
+            border-bottom: 1px solid nth($font-color, 5);
+        }
+    }
+    .warning751 {
+        color: $warn-color;
+    }
+    .pic-zoom751 {
+        width: 480px;
+        float: left;
+    }
+    .product-number751 {
+        text-align: right;
+        line-height: 2;
+    }
+    .pic-big751 {
+        width: 100%;
+        height: 480px;
+        border: 1px solid nth($border-color, 7);
+    }
+    .share751 {
+        padding: 12px 0 20px 0;
+    }
+    .pic-small751 {
+        width: 100%;
+        font-size: 0;
+        a {
+            display: inline-block;
+            width: 21.25%;
+            margin-right: 5%;
+            &:last-child {
+                margin-right: 0;
+            }
+        }
+        img {
+            width: 100%;
+            border: 1px solid nth($border-color, 7);
+        }
+    }
+    .product-intro751 {
+        float: right;
+        width: 567px;
+        padding-top: 28px;
+        h1 {
+            font-size: 25px;
+            min-height: 60px;
+        }
+        h3 {
+            font-size: 16px;
+            color: nth($font-color, 5);
+        }
+    }
+    .price751 {
+        background-color: nth($bg-color, 1);
+        color: nth($font-color, 3);
+        padding: 10px;
+        margin: 10px 0 10px -10px;
+    }
+    .price-item751 {
+        line-height: 2;
+        strong {
+            font-size: 30px;
+            color: nth($font-color, 5);
+            margin: 0 15px 0 25px;
+        }
+        del {
+            margin-right: 130px;
+        }
+    }
+    .standard751 {
+        p {
+            display: inline-block;
+            width: 210px;
+            padding: 10px 0;
+        }
+    }
+    .stock751 {
+        padding: 10px 0;
+    }
+    .amount751 {
+        display: inline-block;
+        margin-right: 55px;
+        font-size: 0;
+    }
+    .cur-num751 {
+        font-size: 16px;
+        display: inline-block;
+        width: 70px;
+        text-align: center;
+        height: 40px;
+        line-height: 40px;
+        border-top: 1px solid nth($border-color, 7);
+        border-bottom: 1px solid nth($border-color, 7);
+    }
+    .amount-add751,
+    .amount-minus751 {
+        font-size: 16px;
+        cursor: pointer;
+        display: inline-block;
+        width: 40px;
+        height: 40px;
+        line-height: 40px;
+        text-align: center;
+        background-color: #fff;
+        border: 1px solid nth($border-color, 7);
+        &:active {
+            background-color: nth($bg-color, 2);
+        }
+    }
+    .description751 {
+        max-height: 210px;
+        padding: 15px 0;
+        margin-top: 25px;
+        overflow-y: scroll;
+        border-top: 1px solid nth($border-color, 7);
+        border-bottom: 1px dashed nth($border-color, 7);
+    }
+    .label751 {}
+    .label-l751,
+    .label-r751 {
+        display: inline-block;
+        width: 50%;
+        line-height: 50px;
+    }
+    .label-l751 {
+        float: left;
+        span {
+            margin: 0 5px;
+            color: #fff;
+            padding: 5px;
+            background-color: red;
+        }
+    }
+    .label-r751 {
+        float: right;
+    }
+    .cookbook751 {
+        font-size: 16px;
+        padding: 15px 0;
+        border-bottom: 1px dashed nth($border-color, 7);
+        .icon {
+            margin-top: 70px;
+        }
+    }
+    .cookbook-name751 {
+        line-height: 35px;
+    }
+    .cookbook-wrap751 {
+        height: 200px;
+    }
+    .cookbook-img751 {
+        float: left;
+        height: 100%;
+        width: 275px;
+        img {
+            width: 100%;
+            height: 100%;
+        }
+    }
+    .package751 {
+        float: left;
+        width: 620px;
+        height: 100%;
+        overflow-x: scroll;
+        overflow-y: hidden;
+    }
+    .cookbook-list751 {
+        float: left;
+        @include box-sizing(border-box);
+        height: 100%;
+        width: 200%;
+        margin-left: 15px;
+        li {
+            position: relative;
+            float: left;
+            width: 150px;
+            height: 100%;
+            img {
+                width: 100%;
+                cursor: pointer;
+            }
+            p {
+                font-size: 12px;
+            }
+        }
+    }
+    .cookbook-plus751 {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 40px;
+        height: 100%;
+        text-align: center;
+    }
+    .cookbook-product751 {
+        @include box-sizing(border-box);
+        padding: 20px 0 0 40px;
+        height: 100%;
+    }
+    .cookbook-title751 {
+        display: block;
+        width: 100%;
+        font-size: 12px;
+        color: nth($font-color, 2);
+        min-height: 36px;
+        @include hideMultiLine(2);
+    }
+    .cookbook-price751 {
+        color: nth($font-color, 5);
+        input {
+            margin-right: 10px;
+        }
+    }
+    .cookbook-buy751 {
+        float: right;
+        width: 160px;
+        height: 200px;
+        position: relative;
+        .m-btn-main {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+        }
+    }
+    .total-price751 {
+        font-size: 25px;
+        color: nth($font-color, 5);
+        span {
+            margin-left: 20px;
+        }
+    }
+    .detail-wrap751 {
+        width: 100%;
+    }
+    .may-like751 {
+        @include box-sizing(border-box);
+        float: left;
+        width: 275px;
+        padding: 10px 20px 0 0;
+        border-right: 1px solid nth($border-color, 7);
+        h2 {
+            font-size: 20px;
+            margin: 15px 0;
+        }
+    }
+    .like-item751 {
+        @include box-sizing(border-box);
+        width: 100%;
+        padding: 10px;
+        border: 1px solid nth($border-color, 7);
+        margin-bottom: 10px;
+        position: relative;
+        img {
+            width: 100%;
+            cursor: pointer;
+        }
+        a {
+            @include hideMultiLine(2);
+            color: nth($font-color, 2);
+            margin: 10px 0;
+        }
+        .icon {
+            width: 100%;
+            height: 100%;
+            background-size: 100% 100%;
+        }
+    }
+    .like-label751 {
+        position: absolute;
+        top: 0;
+        right: 0;
+        span {
+            color: #fff;
+            padding: 3px;
+            margin: 0 4px;
+            font-size: 12px;
+        }
+    }
+    .like-price751 {
+        border-top: 1px dashed nth($border-color, 8);
+        padding: 10px 0;
+    }
+    .like-price-l751 {
+        float: left;
+        p {
+            line-height: 1.5;
+            &:last-child {
+                font-size: 18px;
+                color: nth($font-color, 5);
+            }
+        }
+    }
+    .like-price-r751 {
+        float: right;
+        width: 40px;
+        height: 40px;
+        cursor: pointer;
+    }
+    .detail-info751 {
+        float: left;
+        @include box-sizing(border-box);
+        width: 822px;
+        padding: 20px 0 20px 20px;
+        .title751 {
+            margin-bottom: 20px;
+        }
+    }
+}

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <title>到货提醒</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+<header class="l-head">
+    <button type="button" class="back" onclick="history.go(-1)"><span class="icon icon-back"></span></button>
+    <h2 class="title">到货提醒</h2>
+</header>
+<div class="l-content arrival-reminder-box751">
+    <p class="floor reminder-title751">
+        提醒方式
+    </p>
+    <div class="floor reminder-method751">
+        <div class="method751">
+            <input id="methodPhone751" type="radio" class="radio" name="method"><label for="methodPhone751">手机</label>
+        </div>
+        <div class="method751">
+            <input id="methodEmail751" type="radio" class="radio" name="method"><label for="methodEmail751">邮箱</label>
+        </div>
+    </div>
+    <dl class="user-input751">
+        <dt>*手机号<span>（需填写）</span><span class="icon icon-select-down"></span></dt>
+        <dd>
+            <input type="tel" placeholder="15800551155">
+        </dd>
+        <dd>
+            <input type="tel" placeholder="15800551155">
+        </dd>
+    </dl>
+    <dl class="user-input751">
+        <dt>*邮箱<span>（需填写）</span><span class="icon icon-select-down"></span></dt>
+        <dd>
+            <input type="tel" placeholder="15800551155">
+        </dd>
+        <dd>
+            <input type="tel" placeholder="15800551155">
+        </dd>
+    </dl>
+    <div class="btn-wrap751">
+        <button type="button" class="btn-sm" disabled>确定</button>
+    </div>
+</div>
+<script src="../dist/js/common.js?v=1.0.1"></script>
+<script src="../dist/js/product.js?v=1.0.1"></script>
+</body>
+</html>
